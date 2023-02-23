@@ -10,7 +10,16 @@ export function makeBlankQuestion(
     name: string,
     type: QuestionType
 ): Question {
-    return {};
+    return {
+        id: id,
+        name: name,
+        body: "",
+        type: type,
+        options: [],
+        expected: "",
+        points: 1,
+        published: false
+    };
 }
 
 /**
@@ -21,7 +30,9 @@ export function makeBlankQuestion(
  * HINT: Look up the `trim` and `toLowerCase` functions.
  */
 export function isCorrect(question: Question, answer: string): boolean {
-    return false;
+    return (
+        answer.trim().toLowerCase() === question.expected.trim().toLowerCase()
+    );
 }
 
 /**
@@ -31,7 +42,16 @@ export function isCorrect(question: Question, answer: string): boolean {
  * be exactly one of the options.
  */
 export function isValid(question: Question, answer: string): boolean {
-    return false;
+    if (question.type === "short_answer_question") {
+        // For short answer questions, any answer is valid
+        return true;
+    } else if (question.type === "multiple_choice_question") {
+        // For multiple choice questions, the answer must be one of the options
+        return question.options.includes(answer);
+    } else {
+        // Invalid question type
+        return false;
+    }
 }
 
 /**
@@ -41,9 +61,9 @@ export function isValid(question: Question, answer: string): boolean {
  * name "My First Question" would become "9: My First Q".
  */
 export function toShortForm(question: Question): string {
-    return "";
+    const shortName = question.name.slice(0, 10);
+    return `${question.id}: ${shortName}`;
 }
-
 /**
  * Consumes a question and returns a formatted string representation as follows:
  *  - The first line should be a hash sign, a space, and then the `name`
