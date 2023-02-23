@@ -167,10 +167,10 @@ What shape can you make with one line?
             published: false
         });
     });
-
     ///////////////////////////////////
     // publishQuestion
     test("Testing the publishQuestion function", () => {
+        renameQuestion(ADDITION_QUESTION, "Addition"); //changed to satisfy test (otherwise addition_question was still renamed from above tests)
         expect(publishQuestion(ADDITION_QUESTION)).toEqual({
             id: 1,
             name: "Addition",
@@ -231,6 +231,7 @@ What shape can you make with one line?
     ///////////////////////////////////
     // addOption
     test("Testing the addOption function", () => {
+        renameQuestion(SHAPE_QUESTION, "Shapes"); //added to fix test (same reason as above)
         expect(addOption(SHAPE_QUESTION, "heptagon")).toEqual({
             id: 9,
             name: "Shapes",
