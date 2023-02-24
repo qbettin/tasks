@@ -44,6 +44,7 @@ export function isCorrect(question: Question, answer: string): boolean {
  * be exactly one of the options.
  */
 
+
 export function isValid(question: Question, answer: string): boolean {
     if (question.type === "short_answer_question") {
         return true;
@@ -65,7 +66,6 @@ export function toShortForm(question: Question): string {
     const shortName: string = question.name.slice(0, 10);
     return `${question.id}: ${shortName}`;
 }
-
 /**
  * Consumes a question and returns a formatted string representation as follows:
  *  - The first line should be a hash sign, a space, and then the `name`
@@ -103,7 +103,7 @@ export function toMarkdown(question: Question): string {
  * Return a new version of the given question, except the name should now be
  * `newName`.
  */
-
+ 
 export function renameQuestion(question: Question, newName: string): Question {
     question.name = newName;
     return question;
@@ -180,6 +180,7 @@ export function mergeQuestion(
         type: newQuestion.type,
         options: [...newQuestion.options],
         expected: newQuestion.expected,
+
         points,
         published: false
     };
