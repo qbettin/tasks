@@ -3,15 +3,19 @@ import React from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import "./App.css";
 import forest from "./images/forest.png";
+import { ChangeType } from "./components/ChangeType";
+import { RevealAnswer } from "./components/RevealAnswer";
+import { StartAttempt } from "./components/StartAttempt";
+import { TwoDice } from "./components/TwoDice";
+import { CycleHoliday } from "./components/CycleHoliday";
+import { Counter } from "./components/Counter";
+
 function App(): JSX.Element {
     return (
         <div className="App">
-            <header className="App-header">
-                UD CISC275 with React Hooks and TypeScript by Quinten Bettin
-            </header>
             <h1 className="App-joke">
                 when im not coding, I actually touch grass, unlike some of
-                yall...
+                yall... all jokes
             </h1>
             <Container>
                 <Row>
@@ -31,12 +35,7 @@ function App(): JSX.Element {
                     </Col>
                 </Row>
             </Container>
-            <ul>
-                <li>3 fun facts about me:</li>
-                <li>I am 6'6" and can backflip (on ground)</li>
-                <li>I often use adobe after effects to edit videos</li>
-                <li>I love cliff jumping</li>
-            </ul>
+
             <Container>
                 <Row>
                     <Col>
@@ -51,11 +50,18 @@ function App(): JSX.Element {
             <Button onClick={() => console.log("Hello World!")}>
                 Log Hello World
             </Button>
-            <p>
-                Edit <code>src/App.tsx</code> and save. This page will
-                automatically reload.
-            </p>
-            <p>Hello World</p>
+            <hr></hr>
+            <Counter></Counter>
+            <hr />
+            <RevealAnswer></RevealAnswer>
+            <hr />
+            <StartAttempt></StartAttempt>
+            <hr />
+            <TwoDice></TwoDice>
+            <hr />
+            <ChangeType></ChangeType>
+            <hr />
+            <CycleHoliday></CycleHoliday>
         </div>
     );
 }
