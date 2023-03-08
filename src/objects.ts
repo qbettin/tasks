@@ -180,7 +180,6 @@ export function mergeQuestion(
         type: newQuestion.type,
         options: [...newQuestion.options],
         expected: newQuestion.expected,
-
         points,
         published: false
     };
