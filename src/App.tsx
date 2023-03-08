@@ -35,7 +35,6 @@ function App(): JSX.Element {
                     </Col>
                 </Row>
             </Container>
-
             <Container>
                 <Row>
                     <Col>
@@ -62,6 +61,7 @@ function App(): JSX.Element {
             <ChangeType></ChangeType>
             <hr />
             <CycleHoliday></CycleHoliday>
+            <h1>CISC275</h1>
         </div>
     );
 }
