@@ -23,7 +23,16 @@ export function TwoDice(): JSX.Element {
         setRightDie(d6());
     };
 
-    const result = leftDie === rightDie ? (leftDie === 1 ? "Lose" : "Win") : "";
+    let result = "";
+    if (leftDie === rightDie) {
+        if (leftDie === 1) {
+            result = "Lose";
+        } else {
+            result = "Win";
+        }
+    } else {
+        result = "";
+    }
 
     return (
         <div>
