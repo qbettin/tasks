@@ -44,6 +44,12 @@ function App(): JSX.Element {
                     </Col>
                 </Row>
             </Container>
+            <ul>
+                <li>3 fun facts about me:</li>
+                <li>I am 6'6" and can backflip (on ground)</li>
+                <li>I often use adobe after effects to edit videos</li>
+                <li>I love cliff jumping</li>
+            </ul>
             <Container>
                 <Row>
                     <Col>
@@ -92,6 +98,7 @@ function App(): JSX.Element {
             <hr />
             <CycleHoliday></CycleHoliday>
             <h1>CISC275</h1>
+            <p>Hello World</p>
         </div>
     );
 }
